@@ -7,6 +7,10 @@ title: Multiple Parson's Problems on One Page
 ---
 # Parsons Practice
 
+<nav>
+    <li><a href="unit2.markdown">Unit 2<a></li>
+</nav>
+
 ## Parsons 1 (Line Based Grader)
 Re-arrange the blocks below so they print out "Hello World!"
 
