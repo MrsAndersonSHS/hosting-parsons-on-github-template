@@ -53,56 +53,50 @@ The following program segment should figure out the cost for each shirt if they 
 })(); 
 </script>
 
-## Parsons 2 (Variable Check Grader)
-Construct a program that swaps the values of variables <code>x</code> and <code>y</code> using the helper variable <code>tmp</code>. You can change the names of the variables (<span class="jsparson-toggle"></span>) by clicking them.
+## Per Person Cost
+The following program segment should figure out the cost per person for a dinner including the tip. But the blocks have been mixed up and may include an extra block that isn’t needed in the solution. Drag the needed blocks from the top and put them in the correct order below. Click the Get Feedback button to check your solution & Reset Puzzle to start over.
 
-<div id="p2-sortableTrash" class="sortable-code"></div>
-<div id="p2-sortable" class="sortable-code"></div>
-<div style="clear:both;"></div>
-<p>
-    <input id="p2-feedbackLink" value="Get Feedback" type="button" />
-    <input id="p2-newInstanceLink" value="Reset Problem" type="button" />
-</p>
-<script type="text/javascript">
+<div id="Per Person Cost-sortableTrash" class="sortable-code"></div> 
+<div id="Per Person Cost-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="Per Person Cost-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="Per Person Cost-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
 (function(){
-  var initial = "$$toggle::x::y::tmp$$ = $$toggle::x::y::tmp$$\n" +
-    "$$toggle::x::y::tmp$$ = $$toggle::x::y::tmp$$\n" +
-    "$$toggle::x::y::tmp$$ = $$toggle::x::y::tmp$$";
+  var initial = "double bill = 89.23;\n" +
+    "double tip = bill * 0.20;\n" +
+    "double total = bill + tip;\n" +
+    "int numPeople = 3;\n" +
+    "double perPersonCost = total/numPeople;\n" +
+    "System.out.println(perPersonCost);\n" +
+    "System.out.println(perpersoncost); #distractor";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "p2-sortable",
+    "sortableId": "Per Person Cost-sortable",
     "max_wrong_lines": 10,
-    "grader": ParsonsWidget._graders.VariableCheckGrader,
+    "grader": ParsonsWidget._graders.LanguageTranslationGrader,
     "exec_limit": 2500,
     "can_indent": true,
     "x_indent": 50,
     "lang": "en",
-    "trashId": "p2-sortableTrash",
-    "vartests": [
-        {
-            "message": "Testing with initial variable values x = 3 and y = 4",
-            "initcode": "x = 3\ny = 4",
-            "code": "",
-            "variables": {}
-        },
-        {
-            "message": "Testing with initial variable values x = 0 and y = 2",
-            "initcode": "x = 0\ny = 2",
-            "code": "",
-            "variables": {}
-        }
-    ]
+    "show_feedback": true,
+    "trashId": "Per Person Cost-sortableTrash",
+    "executable_code": "bill = 89.23;\ntip = bill * 0.20;\ntotal = bill + tip;\nnumPeople = 3;\nperPersonCost = total/numPeople;\nprint(perPersonCost);",
+    "programmingLang": "java",
+    "vartests": []
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#p2-newInstanceLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.shuffleLines();
-  });
-  $("#p2-feedbackLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.getFeedback();
- });
-})();
+  $("#Per Person Cost-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#Per Person Cost-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
 </script>
 
 ## Parsons 3 (Unit Test Grader)
