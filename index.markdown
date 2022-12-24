@@ -56,12 +56,12 @@ The following program segment should figure out the cost for each shirt if they 
 ## Per Person Cost
 The following program segment should figure out the cost per person for a dinner including the tip. But the blocks have been mixed up and may include an extra block that isn’t needed in the solution. Drag the needed blocks from the top and put them in the correct order below. Click the Get Feedback button to check your solution & Reset Puzzle to start over.
 
-<div id="Per Person Cost-sortableTrash" class="sortable-code"></div> 
-<div id="Per Person Cost-sortable" class="sortable-code"></div> 
+<div id="PerPersonCost-sortableTrash" class="sortable-code"></div> 
+<div id="PerPersonCost-sortable" class="sortable-code"></div> 
 <div style="clear:both;"></div> 
 <p> 
-    <input id="Per Person Cost-feedbackLink" value="Get Feedback" type="button" /> 
-    <input id="Per Person Cost-newInstanceLink" value="Reset Problem" type="button" /> 
+    <input id="PerPersonCost-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="PerPersonCost-newInstanceLink" value="Reset Problem" type="button" /> 
 </p> 
 <script type="text/javascript"> 
 (function(){
@@ -73,7 +73,7 @@ The following program segment should figure out the cost per person for a dinner
     "System.out.println(perPersonCost);\n" +
     "System.out.println(perpersoncost); #distractor";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "Per Person Cost-sortable",
+    "sortableId": "PerPersonCost-sortable",
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.LanguageTranslationGrader,
     "exec_limit": 2500,
@@ -81,18 +81,18 @@ The following program segment should figure out the cost per person for a dinner
     "x_indent": 50,
     "lang": "en",
     "show_feedback": true,
-    "trashId": "Per Person Cost-sortableTrash",
+    "trashId": "PerPersonCost-sortableTrash",
     "executable_code": "bill = 89.23;\ntip = bill * 0.20;\ntotal = bill + tip;\nnumPeople = 3;\nperPersonCost = total/numPeople;\nprint(perPersonCost);",
     "programmingLang": "java",
     "vartests": []
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#Per Person Cost-newInstanceLink").click(function(event){ 
+  $("#PerPersonCost-newInstanceLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.shuffleLines(); 
   }); 
-  $("#Per Person Cost-feedbackLink").click(function(event){ 
+  $("#PerPersonCost-feedbackLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.getFeedback(); 
   }); 
