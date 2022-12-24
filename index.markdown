@@ -12,44 +12,49 @@ title: Variable Assignments & Expressions
 </nav>
 
 ## Parsons 1 (Line Based Grader)
-Re-arrange the blocks below so they print out "Hello World!"
-
-<div id="p1-sortableTrash" class="sortable-code"></div>
-<div id="p1-sortable" class="sortable-code"></div>
-<div style="clear:both;"></div>
-<p>
-    <input id="p1-feedbackLink" value="Get Feedback" type="button" />
-    <input id="p1-newInstanceLink" value="Reset Problem" type="button" />
-</p>
-<script type="text/javascript">
-(function() {
-  var initial = "print(\"Hello\")\n" +
-    "print(\" \")\n" +
-    "print(\"World\")\n" +
-    "print(\"!\")";
+The following program segment should figure out the cost for each shirt if they are buy 2 and get the third free and they are originally $45 each. But the blocks have been mixed up and may include extra blocks that aren't needed in the solution. Drag the blocks from the left and put them in the correct order on the right. Click the Check button to check your solution.
+        
+<div id="pricePerShirt-sortableTrash" class="sortable-code"></div> 
+<div id="pricePerShirt-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="pricePerShirt-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="pricePerShirt-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
+(function(){
+  var initial = "double price = 45;\n" +
+    "double totalCost = price * 2;\n" +
+    "double pricePerShirt = totalCost / 3;\n" +
+    "System.out.println(pricePerShirt);\n" +
+    "int totalCost = price * 2 #distractor\n" +
+    "print(&quot;pricePerShirt&quot;) #distractor";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "p1-sortable",
+    "sortableId": "pricePerShirt-sortable",
     "max_wrong_lines": 10,
-    "grader": ParsonsWidget._graders.LineBasedGrader,
+    "grader": ParsonsWidget._graders.LanguageTranslationGrader,
     "exec_limit": 2500,
-    "can_indent": false,
+    "can_indent": true,
     "x_indent": 50,
     "lang": "en",
-    "trashId": "p1-sortableTrash"
+    "show_feedback": true,
+    "trashId": "pricePerShirt-sortableTrash",
+    "executable_code": "price = 45\ntotalCost = price * 2\npricePerShirt = totalCost / 3\nprint(pricePerShirt)",
+    "programmingLang": "pseudo",
+    "vartests": []
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#p1-newInstanceLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.shuffleLines();
-  });
-  $("#p1-feedbackLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.getFeedback();
-  });
-})();
+  $("#pricePerShirt-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#pricePerShirt-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
 </script>
-
 
 ## Parsons 2 (Variable Check Grader)
 Construct a program that swaps the values of variables <code>x</code> and <code>y</code> using the helper variable <code>tmp</code>. You can change the names of the variables (<span class="jsparson-toggle"></span>) by clicking them.
