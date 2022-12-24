@@ -145,55 +145,51 @@ The following code should calculate how many miles you can go on half a tank of 
 })(); 
 </script>
 
-## Parsons 4 (Language Translation Grader)
-Print out "I am a Java program" three times using a for loop.
+## Average of 3 Numbers
+Arrange the blocks to compute the average of three integers.  There may be extra blocks that aren't needed in the solution. Drag the needed blocks from the top and put them in the correct order below. Click the Get Feedback button to check your solution & Reset Puzzle to start over.
 
-<div id="p4-sortableTrash" class="sortable-code"></div>
-<div id="p4-sortable" class="sortable-code"></div>
-<div style="clear:both;"></div>
-<p>
-    <input id="p4-feedbackLink" value="Get Feedback" type="button" />
-    <input id="p4-newInstanceLink" value="Reset Problem" type="button" />
-</p>
-<script type="text/javascript">
+<div id="Average-sortableTrash" class="sortable-code"></div> 
+<div id="Average-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="Average-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="Average-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
 (function(){
-  var initial = "for (int i=0;i<3;i++) {\n" +
-    "System.out.print(\\\"I \\\");\n" +
-    "System.out.print(\\\"am \\\");\n" +
-    "System.out.print(\\\"a Java program \\\");\n" +
-    "}";
+  var initial = "int num1 = 10;\n" +
+    "int num2 = 13;\n" +
+    "int num3 = 6;\n" +
+    "double average = (double)(num1 + num2 + num3)/3;\n" +
+    "System.out.println(average);\n" +
+    "double average = num1 + num2 + num3 / 3; #distractor\n" +
+    "double average = (num1 + num2 + num3) / 3; #distractor\n" +
+    "System.out.println(&quot;average&quot;); #distractor";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "p4-sortable",
-    "max_wrong_lines": 1,
+    "sortableId": "Average-sortable",
+    "max_wrong_lines": 2,
     "grader": ParsonsWidget._graders.LanguageTranslationGrader,
     "exec_limit": 2500,
     "can_indent": true,
     "x_indent": 50,
     "lang": "en",
-    "executable_code": "for x in range(3):\n    output += 'I '\n    output += 'am '\n    output += 'a Java program '\npass",
+    "show_feedback": true,
+    "trashId": "Average-sortableTrash",
+    "executable_code": "num1 = 10\nnum2 = 13\nnum3 = 6\naverage = (num1 + num2 + num3)/3\nprint(average)",
     "programmingLang": "java",
-    "vartests": [
-        {
-            "message": "Testing...",
-            "initcode": "output = ''",
-            "code": "",
-            "variables": {
-                "output": "I am a Java program I am a Java program I am a Java program "
-            }
-        }
-    ]
+    "vartests": []
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#p4-newInstanceLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.shuffleLines();
-  });
-  $("#p4-feedbackLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.getFeedback();
-   });
-})();
+  $("#Average-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#Average-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
 </script>
 
 
