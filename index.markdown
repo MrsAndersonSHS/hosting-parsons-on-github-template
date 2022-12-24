@@ -99,48 +99,50 @@ The following program segment should figure out the cost per person for a dinner
 })(); 
 </script>
 
-## Parsons 3 (Unit Test Grader)
-Your task is to construct a function which returns the index of the largest element in the array.
+## Gas Tank
+The following code should calculate how many miles you can go on half a tank of gas if the miles per gallon is 26 and your tank holds 15 gallons. But, the blocks have been mixed up and may include extra blocks that aren't needed in the solution. Drag the needed blocks from the top and put them in the correct order below. Click the Get Feedback button to check your solution & Reset Puzzle to start over.
 
-<div id="p3-sortableTrash" class="sortable-code"></div>
-<div id="p3-sortable" class="sortable-code"></div>
-<div style="clear:both;"></div>
-<p>
-    <input id="p3-feedbackLink" value="Get Feedback" type="button" />
-    <input id="p3-newInstanceLink" value="Reset Problem" type="button" />
-</p>
-<script type="text/javascript">
+<div id="HalfTank-sortableTrash" class="sortable-code"></div> 
+<div id="HalfTank-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="HalfTank-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="HalfTank-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
 (function(){
-  var initial = "def maxindex(arg):\n" +
-    " ans = 0\n" +
-    " for i in range(len(arg)):\n" +
-    " if arg[i] > arg[ans]:\n" +
-    " ans = i\n" +
-    " while True:\n" +
-    "pass\n" +
-    " return ans";
+  var initial = "int mpg = 26;\n" +
+    "int tankHolds = 15;\n" +
+    "double numGallons = (double) tankHolds / 2;\n" +
+    "double miles = numGallons * mpg;\n" +
+    "System.out.println(miles);\n" +
+    "double numGallons = tankHolds / 2; #distractor\n" +
+    "int miles = numGallons * mgp; #distractor";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "p3-sortable",
+    "sortableId": "HalfTank-sortable",
     "max_wrong_lines": 10,
-    "grader": ParsonsWidget._graders.UnitTestGrader,
+    "grader": ParsonsWidget._graders.LanguageTranslationGrader,
     "exec_limit": 2500,
     "can_indent": true,
     "x_indent": 50,
     "lang": "en",
-    "trashId": "p3-sortableTrash",
-    "unittests": "import unittestparson\nclass myTests(unittestparson.unittest):\n  def test_0(self):\n    self.assertEqual(,,)\n_test_result = myTests().main()"
+    "show_feedback": true,
+    "trashId": "HalfTank-sortableTrash",
+    "executable_code": "mpg = 26\ntankHolds = 15\nnumGallons = (double) tankHolds / 2\nmiles = numGallons * mpg\nprint(miles)",
+    "programmingLang": "java",
+    "vartests": []
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#p3-newInstanceLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.shuffleLines();
-  });
-  $("#p3-feedbackLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.getFeedback();
-  });
-})();
+  $("#HalfTank-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#HalfTank-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
 </script>
 
 ## Parsons 4 (Language Translation Grader)
