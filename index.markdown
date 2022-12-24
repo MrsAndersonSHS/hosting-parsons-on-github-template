@@ -7,11 +7,8 @@ title: Variable Assignments & Expressions
 ---
 # Parsons Practice
 
-<nav>
-    <li><a href="unit2.markdown">Unit 2<a></li>
-</nav>
 
-## Parsons 1 (Line Based Grader)
+## Price Per Shirt
 The following program segment should figure out the cost for each shirt if they are buy 2 and get the third free and they are originally $45 each. But the blocks have been mixed up and may include extra blocks that aren't needed in the solution. Drag the blocks from the left and put them in the correct order on the right. Click the Check button to check your solution.
         
 <div id="pricePerShirt-sortableTrash" class="sortable-code"></div> 
