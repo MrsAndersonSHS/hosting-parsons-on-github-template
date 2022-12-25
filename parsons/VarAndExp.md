@@ -9,7 +9,9 @@ title: Variable Assignments & Expressions
 
 
 ## Price Per Shirt
-Suppose a clothing store is having a sale where you can purchase three shirts for the cost of two.  For example, if the original price of a shirt is $45, then the total from buying 3 shirts would be $90 making the price for each shirt $30.  Drag the blocks of code to to calculate the correct pricePerShirt for this sale. Click the Get Feedback button to check your solution or Reset to start over.
+Suppose a clothing store is having a sale where you can purchase three shirts for the cost of two.  For example, if the original price of a shirt is $45, then the total from buying 3 shirts would be $90 making the price for each shirt $30.  
+
+Drag the blocks of code to to calculate the correct pricePerShirt for this sale. Click the Get Feedback button to check your solution or Reset to start over.
 
 You may assume that variabled named price with double precision has already been declared and initialized.
         
@@ -72,45 +74,73 @@ You may assume that variabled named price with double precision has already been
 </script>
 
 ## Per Person Cost
-The following program segment should figure out the cost per person for a dinner including the tip. But the blocks have been mixed up and may include an extra block that isn’t needed in the solution. Drag the needed blocks from the top and put them in the correct order below. Click the Get Feedback button to check your solution & Reset Puzzle to start over.
+The following program segment should figure out the cost per person for a dinner including the tip. For example, suppose 5 friends go out to dinner and the bill is $95.  With a 20% tip the total is $114, so each person pays $22.80. 
 
-<div id="PerPersonCost-sortableTrash" class="sortable-code"></div> 
-<div id="PerPersonCost-sortable" class="sortable-code"></div> 
+Drag the blocks of code to to calculate the correct pricePerShirt for this sale. Click the Get Feedback button to check your solution or Reset to start over.
+
+You may assume that a variable named bill with double precision has already been initiliazed.
+
+<div id="pricePerShirt-sortableTrash" class="sortable-code"></div> 
+<div id="pricePerShirt-sortable" class="sortable-code"></div> 
 <div style="clear:both;"></div> 
 <p> 
-    <input id="PerPersonCost-feedbackLink" value="Get Feedback" type="button" /> 
-    <input id="PerPersonCost-newInstanceLink" value="Reset Problem" type="button" /> 
+    <input id="pricePerShirt-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="pricePerShirt-newInstanceLink" value="Reset Problem" type="button" /> 
 </p> 
 <script type="text/javascript"> 
 (function(){
-  var initial = "double bill = 89.23;\n" +
-    "double tip = bill * 0.20;\n" +
+  var initial = "double tip = bill * 0.2;\n" +
     "double total = bill + tip;\n" +
-    "int numPeople = 3;\n" +
-    "double perPersonCost = total/numPeople;\n" +
-    "System.out.println(perPersonCost);\n" +
-    "System.out.println(perpersoncost); #distractor";
+    "double costPerPerson = total / numPeople;\n" +
+    "System.out.println(costPerPerson);";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "PerPersonCost-sortable",
+    "sortableId": "pricePerShirt-sortable",
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.LanguageTranslationGrader,
     "exec_limit": 2500,
-    "can_indent": true,
+    "can_indent": false,
     "x_indent": 50,
     "lang": "en",
     "show_feedback": true,
-    "trashId": "PerPersonCost-sortableTrash",
-    "executable_code": "bill = 89.23;\ntip = bill * 0.20;\ntotal = bill + tip;\nnumPeople = 3;\nperPersonCost = total/numPeople;\nprint(perPersonCost);",
+    "trashId": "pricePerShirt-sortableTrash",
+    "executable_code": "tip = str(float(bill) * 1/5)\ntotal = str(bill + float(tip))\ncostPerPerson = str(float(total) / numPeople)\nprint(costPerPerson)",
     "programmingLang": "java",
-    "vartests": []
+    "vartests": [
+        {
+            "message": "5 people would each pay $22.80 if the bill was $95 before tip.",
+            "initcode": "bill = 95\nnumPeople = 5",
+            "code": "",
+            "variables": {
+                "tip": "19.0",
+                "costPerPerson": "22.8"
+            }
+        },
+        {
+            "message": "3 people would each pay $35.72 if the bill was $89.30 before tip.",
+            "initcode": "bill = 89.3\nnumPeople = 3",
+            "code": "",
+            "variables": {
+                "tip": "17.86",
+                "costPerPerson": "35.72"
+            }
+        },
+        {
+            "message": "The tip is 20% of the bill.",
+            "initcode": "bill = 89.3\nnumPeople = 3",
+            "code": "",
+            "variables": {
+                "tip": "17.86"
+            }
+        }
+    ]
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#PerPersonCost-newInstanceLink").click(function(event){ 
+  $("#pricePerShirt-newInstanceLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.shuffleLines(); 
   }); 
-  $("#PerPersonCost-feedbackLink").click(function(event){ 
+  $("#pricePerShirt-feedbackLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.getFeedback(); 
   }); 
