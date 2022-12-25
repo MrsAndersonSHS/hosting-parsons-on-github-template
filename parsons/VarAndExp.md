@@ -21,7 +21,7 @@ The following program segment should figure out the cost for each shirt if they 
 <script type="text/javascript"> 
 (function(){
   var initial = "double price = 45;\n" +
-    "doube totalCost = price*2;\n" +
+    "double totalCost = price*2;\n" +
     "double pricePerShirt = totalCost/3;\n" +
     "System.out.println(pricePerShirt);\n" +
     "int pricePerShirt = totalCost/3; #distractor\n" +
@@ -38,7 +38,14 @@ The following program segment should figure out the cost for each shirt if they 
     "trashId": "pricePerShirt-sortableTrash",
     "executable_code": "price = 45;\ntotalCost = price*2;\npricePerShirt = totalCost/3;\nprint(pricePerShirt);",
     "programmingLang": "java",
-    "vartests": []
+    "vartests": [
+        {
+            "message": "",
+            "initcode": "price = 45",
+            "code": "",
+            "variables": {}
+        }
+    ]
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
