@@ -9,7 +9,9 @@ title: Variable Assignments & Expressions
 
 
 ## Price Per Shirt
-The following program segment should figure out the cost for each shirt if they are buy 2 and get the third free and they are originally $45 each. But the blocks have been mixed up and may include extra blocks that aren't needed in the solution. Drag the blocks from the top and put them in the correct order below. Click the Get Feedback button to check your solution or Reset to start over.
+Suppose a clothing store is having a sale where you can purchase three shirts for the cost of two.  For example, if the original price of a shirt is $45, then the total from buying 3 shirts would be $90 making the price for each shirt $30.  Drag the blocks of code to to calculate the correct pricePerShirt for this sale. Click the Get Feedback button to check your solution or Reset to start over.
+
+You may assume that variabled named price with double precision has already been declared and initialized.
         
 <div id="pricePerShirt-sortableTrash" class="sortable-code"></div> 
 <div id="pricePerShirt-sortable" class="sortable-code"></div> 
@@ -20,12 +22,9 @@ The following program segment should figure out the cost for each shirt if they 
 </p> 
 <script type="text/javascript"> 
 (function(){
-  var initial = "double price = 45;\n" +
-    "double totalCost = price*2;\n" +
-    "double pricePerShirt = totalCost/3;\n" +
-    "System.out.println(pricePerShirt);\n" +
-    "int pricePerShirt = totalCost/3; #distractor\n" +
-    "System.out.println(&quot;pricePerShirt&quot;); #distractor";
+  var initial = "double totalCost = $$toggle::price::pricePerShirt$$*2;\n" +
+    "double $$toggle::price::pricePerShirt$$ = $$toggle::totalCost::price$$/3;\n" +
+    "System.out.println(pricePerShirt);";
   var parsonsPuzzle = new ParsonsWidget({
     "sortableId": "pricePerShirt-sortable",
     "max_wrong_lines": 2,
@@ -36,14 +35,26 @@ The following program segment should figure out the cost for each shirt if they 
     "lang": "en",
     "show_feedback": true,
     "trashId": "pricePerShirt-sortableTrash",
-    "executable_code": "price = 45;\ntotalCost = price*2;\npricePerShirt = totalCost/3;\nprint(pricePerShirt);",
+    "executable_code": "totalCost = $$toggle::price::pricePerShirt$$*2\n$$toggle::price::pricePerShirt$$ = $$toggle::totalCost::price$$/3\nprint(pricePerShirt)",
     "programmingLang": "java",
     "vartests": [
         {
-            "message": "",
-            "initcode": "price = 45",
+            "message": "If each shirt is originally $45, then buying 3 cost for the cost of 2 would amount to $30 per shirt.",
+            "initcode": "price=45",
             "code": "",
-            "variables": {}
+            "variables": {
+                "totalCost": 90,
+                "pricePerShirt": 30
+            }
+        },
+        {
+            "message": "If each shirt is originally $18, then buying 3 cost for the cost of 2 would amount to $12 per shirt.",
+            "initcode": "price=18",
+            "code": "",
+            "variables": {
+                "totalCost": 36,
+                "pricePerShirt": 12
+            }
         }
     ]
   });
