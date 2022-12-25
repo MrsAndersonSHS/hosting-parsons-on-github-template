@@ -21,14 +21,14 @@ The following program segment should figure out the cost for each shirt if they 
 <script type="text/javascript"> 
 (function(){
   var initial = "double price = 45;\n" +
-    "double totalCost = price * 2;\n" +
-    "double pricePerShirt = totalCost / 3;\n" +
+    "doube totalCost = price*2;\n" +
+    "double pricePerShirt = totalCost/3;\n" +
     "System.out.println(pricePerShirt);\n" +
-    "int totalCost = price * 2 #distractor\n" +
-    "print(&quot;pricePerShirt&quot;) #distractor";
+    "int pricePerShirt = totalCost/3; #distractor\n" +
+    "System.out.println(&quot;pricePerShirt&quot;); #distractor";
   var parsonsPuzzle = new ParsonsWidget({
     "sortableId": "pricePerShirt-sortable",
-    "max_wrong_lines": 10,
+    "max_wrong_lines": 2,
     "grader": ParsonsWidget._graders.LanguageTranslationGrader,
     "exec_limit": 2500,
     "can_indent": true,
@@ -36,8 +36,8 @@ The following program segment should figure out the cost for each shirt if they 
     "lang": "en",
     "show_feedback": true,
     "trashId": "pricePerShirt-sortableTrash",
-    "executable_code": "price = 45\ntotalCost = price * 2\npricePerShirt = totalCost / 3\nprint(pricePerShirt)",
-    "programmingLang": "pseudo",
+    "executable_code": "price = 45;\ntotalCost = price*2;\npricePerShirt = totalCost/3;\nprint(pricePerShirt);",
+    "programmingLang": "java",
     "vartests": []
   });
   parsonsPuzzle.init(initial);
