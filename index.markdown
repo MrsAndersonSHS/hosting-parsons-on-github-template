@@ -8,6 +8,7 @@ title: Java Parsons Problems Homepage
 # Links to Practice Pages
 
 [Unit 1: Variables & Expressions](./parsons/VarAndExp.html)
+[test link](./parsons/java-example.html)
 
 <div id="pricePerShirt-sortableTrash" class="sortable-code"></div> 
 <div id="pricePerShirt-sortable" class="sortable-code"></div> 
